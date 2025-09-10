@@ -26,5 +26,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          context: ./hello_flask
+          file: ./hello_flask/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-workflow:latest
