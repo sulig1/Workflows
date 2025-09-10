@@ -26,7 +26,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./hello_flask
-          file: ./hello_flask/Dockerfile
-          push: true
+          context: ./hello_flask #everything in here is needed 
+          file: ./hello_flask/Dockerfile #tells where to find dockerfile
+          push: true #this means that once image is built it will be pushed to registery (dockdrhub/aws). If it was false then image would be built and pushed to actions on gihthub but not to registerys
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-workflow:latest
